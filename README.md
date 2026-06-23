@@ -9,4 +9,5 @@ Error404 is a technology firm focused on building innovative software solutions 
 ## Executive Roster
 
 **Jeff Kyalo** - Chief Executive Officer
+
 **Sharon Kariuki** - Chief Technology Officer
