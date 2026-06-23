@@ -17,3 +17,5 @@ Error404 is a technology firm focused on building innovative software solutions 
 **Jamie Nguru** - Chief Product Officer
 
 **Allger Migide** - Chief Innovation Officer
+
+**Ayana Ndete** - Chief Data and AI Officer 
