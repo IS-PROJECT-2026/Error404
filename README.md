@@ -15,3 +15,5 @@ Error404 is a technology firm focused on building innovative software solutions 
 **Cyril-John Sinari** - Chief Operating Officer
 
 **Jamie Nguru** - Chief Product Officer
+
+**Allger Migide** - Chief Innovation Officer
