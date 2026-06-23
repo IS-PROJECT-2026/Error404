@@ -13,3 +13,5 @@ Error404 is a technology firm focused on building innovative software solutions 
 **Sharon Kariuki** - Chief Technology Officer
 
 **Cyril-John Sinari** - Chief Operating Officer
+
+**Jamie Nguru** - Chief Product Officer
