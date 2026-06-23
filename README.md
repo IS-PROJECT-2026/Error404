@@ -1,1 +1,5 @@
 # Error404
+
+## Company Vision
+
+Error404 is a technology firm focused on building innovative software solutions in system design, cloud computing and machine learning engineering. We aim to design and deliver scalable, intelligent, and reliable digital systems that solve real-world problems and enhance user experience.
