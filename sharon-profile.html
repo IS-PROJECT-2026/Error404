@@ -149,16 +149,6 @@ color: transparent;
                 </g>
               </svg>
             </button>
-            <button id="cartToggle" class="relative text-slate-500 hover:text-brand-accent transition-colors group">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="" aria-hidden="true" role="img" data-icon="lucide:briefcase" data-width="20" data-lucide="shopping-cart" data-icon-set="lucide" data-icon-replaced="true" style="color: rgb(100, 116, 139);">
-                <circle cx="8" cy="21" r="1"></circle>
-                <circle cx="19" cy="21" r="1"></circle>
-                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-              </svg>
-              <span class="-top-3 -right-2 text-white text-[10px] flex items-center justify-center font-bold w-4 h-4 rounded-sm absolute">
-                1
-              </span>
-            </button>
           </div>
         </div>
       </div>
@@ -225,69 +215,7 @@ color: transparent;
       </div>
     </div>
 
-    <!-- Cart Sidebar (Project Summary) -->
-    <div id="cartSidebar" class="fixed inset-0 z-50 opacity-0 pointer-events-none transition-opacity duration-300">
-      <div class="absolute inset-0 bg-brand-dark/80 backdrop-blur-sm" id="cartOverlay"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-96 bg-slate-900 border-l border-slate-800 transform transition-transform duration-300 ease-out translate-x-full">
-        <div class="p-8 h-full flex flex-col">
-          <div class="flex justify-between items-center mb-8">
-            <h3 class="text-white font-bold uppercase tracking-wider text-sm">
-              Current Focus
-            </h3>
-            <button id="closeCart" class="text-slate-500 hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:x" data-width="20">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
-
-          <div class="flex-1 overflow-auto pr-2">
-            <div class="space-y-6">
-              <div class="flex gap-4 pb-6 border-b border-slate-800">
-                <div class="w-20 h-24 bg-slate-800 rounded-sm overflow-hidden">
-                  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/41438a62-3777-4cae-924c-e588db59dba3_320w.webp" class="w-full h-full object-cover opacity-80" alt="Project Thumbnail" style="">
-                </div>
-                <div class="flex-1">
-                  <p class="text-sm font-bold text-white uppercase tracking-wide">
-                    Scalable Backend Platform
-                  </p>
-                  <p class="text-[10px] font-mono text-brand-accent mt-1">
-                    STATUS: IN PROGRESS
-                  </p>
-                  <p class="text-sm font-bold text-slate-400 mt-2">
-                    Django · AWS
-                  </p>
-                </div>
-                <button class="text-slate-600 hover:text-red-500 self-start transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:x" data-width="16">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="border-t border-slate-800 pt-6 mt-4">
-            <div class="flex justify-between text-xs font-mono uppercase tracking-widest mb-3">
-              <span class="text-slate-500">Role</span>
-              <span class="font-bold text-white">CTO</span>
-            </div>
-            <div class="flex justify-between text-lg mb-8">
-              <span class="font-bold text-white tracking-tight">
-                AVAILABILITY
-              </span>
-              <span class="font-bold text-brand-accent font-mono">Open</span>
-            </div>
-            <button class="w-full py-4 bg-brand-accent text-brand-dark text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors mb-3">
-              View Projects
-            </button>
-            <button class="w-full py-4 border border-slate-700 text-white text-xs font-bold uppercase tracking-widest hover:border-white transition-colors">
-              Get in Touch
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Cart Sidebar removed -->
 
     <!-- Hero Section -->
     <section class="relative min-h-screen pt-20 flex flex-col justify-center overflow-hidden border-b border-slate-800">
@@ -480,7 +408,7 @@ color: transparent;
                   </svg>
                 </button>
               </div>
-              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/048e0a68-a97c-46dd-aed4-734f98009a4c_3840w.webp" class="group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 opacity-80 w-full h-full object-cover" alt="Service">
+              <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=1200&amp;q=80" class="group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 opacity-80 w-full h-full object-cover" alt="Python and Django backend development">
             </div>
             <div class="">
               <div class="flex items-center justify-between mb-2">
@@ -531,7 +459,7 @@ color: transparent;
                   </svg>
                 </button>
               </div>
-              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ad97e439-6931-4e5e-bcf3-b69be4018905_3840w.webp" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Service" style="outline: rgb(245, 158, 11) solid 2px; outline-offset: 2px; transition: outline 0.1s ease-in-out;">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&amp;q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Cloud computing and AWS infrastructure">
             </div>
             <div class="">
               <div class="flex items-center justify-between mb-2">
@@ -587,7 +515,7 @@ color: transparent;
                   </svg>
                 </button>
               </div>
-              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/52b4be58-0ae9-4f19-88ed-d742fc1abef3_3840w.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Service" style="">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&amp;q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="REST API development and systems">
             </div>
             <div class="">
               <div class="flex items-center justify-between mb-2">
@@ -638,7 +566,7 @@ color: transparent;
                   </svg>
                 </button>
               </div>
-              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/71087bc3-4cb0-48eb-b49a-6a1587f575d7_3840w.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Service" style="">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&amp;q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="PostgreSQL databases and data centers">
             </div>
             <div class="">
               <div class="flex items-center justify-between mb-2">
@@ -1305,7 +1233,7 @@ color: transparent;
               </p>
             </div>
             <p class="text-[10px] text-slate-600 font-mono">
-              © 2025 Sharon Mugure Kariuki. All rights reserved.
+              © 2026 Sharon Mugure Kariuki. All rights reserved.
             </p>
           </div>
         </div>
@@ -1350,35 +1278,6 @@ color: transparent;
       menuToggle.addEventListener('click', openMenu);
       closeMenu.addEventListener('click', closeMenuFn);
       menuOverlay.addEventListener('click', closeMenuFn);
-
-      // Cart Toggle (Projects Panel)
-      const cartToggle = document.getElementById('cartToggle');
-      const cartSidebar = document.getElementById('cartSidebar');
-      const closeCart = document.getElementById('closeCart');
-      const cartOverlay = document.getElementById('cartOverlay');
-      const cartPanel = cartSidebar.querySelector('.absolute.right-0');
-
-      function openCart() {
-        cartSidebar.classList.remove('opacity-0', 'pointer-events-none');
-        cartSidebar.classList.add('opacity-100', 'pointer-events-auto');
-        setTimeout(() => {
-          cartPanel.classList.remove('translate-x-full');
-          cartPanel.classList.add('translate-x-0');
-        }, 10);
-      }
-
-      function closeCartFn() {
-        cartPanel.classList.remove('translate-x-0');
-        cartPanel.classList.add('translate-x-full');
-        setTimeout(() => {
-          cartSidebar.classList.remove('opacity-100', 'pointer-events-auto');
-          cartSidebar.classList.add('opacity-0', 'pointer-events-none');
-        }, 300);
-      }
-
-      cartToggle.addEventListener('click', openCart);
-      closeCart.addEventListener('click', closeCartFn);
-      cartOverlay.addEventListener('click', closeCartFn);
 
       // Newsletter Modal
       const newsletterModal = document.getElementById('newsletterModal');
