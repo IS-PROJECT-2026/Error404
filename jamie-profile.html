@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — Jamie Nguru Kibanya, CPO @ Error404</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --mint:    #f2a93d;   /* first-color  — bright amber accent */
+      --teal:    #d98f3f;   /* second-color — mid amber accent    */
+      --slate:   #4a4030;   /* third-color  — mid surface (warm)  */
+      --navy:    #2a2419;   /* fourth-color — dark surface        */
+      --deep:    #1e1a13;   /* darker than navy for body bg       */
+      --darkest: #14110c;   /* near-black charcoal hero bg        */
+      --fg:      #f3ece1;
+      --fg2:     #c9bda5;
+      --fg3:     #8a7c62;
+      --white:   #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', system-ui, sans-serif;
+      background: var(--deep);
+      color: var(--fg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    /* ── HERO ──────────────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--darkest);
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    /* Diagonal teal slash */
+    .hero-slash {
+      position: absolute;
+      top: 0; right: 0;
+      width: 45%;
+      height: 100%;
+      background: var(--teal);
+      clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 0;
+    }
+
+    /* Noise texture on slash */
+    .hero-slash::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 4px,
+        rgba(0,0,0,0.10) 4px,
+        rgba(0,0,0,0.10) 5px
+      );
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      align-items: stretch;
+      max-width: 960px;
+      margin: 0 auto;
+      min-height: 420px;
+    }
+
+    .hero-identity {
+      padding: 56px 48px 48px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0;
+      animation: rise 0.6s ease-out both;
+    }
+
+    .hero-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 5px;
+      color: var(--mint);
+      margin-bottom: 4px;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px, 9vw, 100px);
+      color: var(--white);
+      line-height: 0.88;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .hero-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--fg2);
+      margin-bottom: 24px;
+    }
+
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .hero-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--darkest);
+      background: var(--mint);
+      padding: 5px 14px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .hero-tag.outline {
+      background: transparent;
+      color: var(--fg2);
+      border: 1px solid var(--slate);
+    }
+
+    .hero-tag:hover { transform: translateY(-2px); }
+
+    /* Right: photo panel */
+    .hero-photo-panel {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0;
+      animation: fade 0.8s ease-out both;
+    }
+
+    .hero-photo-box {
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-left: 3px solid rgba(242,169,61,0.12);
+      min-height: 300px;
+      overflow: hidden;
+    }
+
+    .hero-photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── NAV STRIP ──────────────────────────────────────────────────────────── */
+    .nav-strip {
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 44px;
+    }
+
+    .nav-programme {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: var(--darkest);
+    }
+
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(20,17,12,0.65);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover, .nav-link:focus-visible { color: var(--darkest); }
+
+    /* ── BODY ───────────────────────────────────────────────────────────────── */
+    .body-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--deep);
+    }
+
+    /* ── SECTION ────────────────────────────────────────────────────────────── */
+    .section {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      border-bottom: 1px solid var(--slate);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    /* Left col */
+    .sec-left {
+      background: var(--navy);
+      padding: 36px 28px 36px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 6px;
+      border-right: 1px solid var(--slate);
+      position: relative;
+    }
+
+    /* Teal top accent bar */
+    .sec-left::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 52px; right: 0;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    .sec-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: var(--slate);
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+
+    .sec-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    /* Right col */
+    .sec-right {
+      padding: 36px 52px 36px 36px;
+    }
+
+    .sec-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      color: var(--mint);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .sec-prompt {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--fg3);
+      font-style: italic;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .sec-answer {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--fg2);
+      line-height: 1.8;
+    }
+
+    /* ── TECH STACK — stat cards ────────────────────────────────────────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 2px;
+    }
+
+    .stat-card {
+      background: var(--navy);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: background 0.15s ease;
+    }
+
+    .stat-card:hover { background: var(--slate); }
+
+    .stat-status {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .stat-status.known    { color: var(--mint); }
+    .stat-status.learning { color: var(--fg3); }
+
+    .stat-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--fg);
+      line-height: 1.1;
+    }
+
+    /* ── SKILLS — numbered list ─────────────────────────────────────────────── */
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .skill-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .skill-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .skill-text {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--fg2);
+      line-height: 1.65;
+      padding-top: 6px;
+    }
+
+    .skill-text strong {
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────────────────────── */
+    .footer {
+      background: var(--darkest);
+      padding: 18px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-top: 2px solid var(--teal);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--fg3);
+    }
+
+    .footer-back {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mint);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-back:hover, .footer-back:focus-visible { color: var(--white); }
+
+    a:focus-visible, .hero-photo-box:focus-visible {
+      outline: 2px solid var(--mint);
+      outline-offset: 2px;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 680px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-slash { width: 100%; clip-path: none; height: 4px; top: auto; bottom: 0; }
+      .hero-photo-panel { display: none; }
+      .hero-identity { padding: 40px 24px 36px; }
+      .nav-strip { padding: 0 24px; flex-wrap: wrap; height: auto; row-gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+      .section { grid-template-columns: 1fr; }
+      .sec-left { padding: 20px 24px 12px; flex-direction: row; align-items: center; gap: 12px; }
+      .sec-left::before { left: 24px; }
+      .sec-num { font-size: 32px; }
+      .sec-right { padding: 20px 24px 28px; }
+      .footer { padding: 16px 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ──────────────────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-slash" aria-hidden="true"></div>
+    <div class="hero-inner">
+
+      <div class="hero-identity">
+        <p class="hero-number">PRODUCT · ERROR404</p>
+        <h1 class="hero-name">Jamie Nguru<br>Kibanya</h1>
+        <p class="hero-role">Chief Product Officer</p>
+        <div class="hero-tags">
+          <span class="hero-tag">Nairobi</span>
+          <span class="hero-tag">Error404</span>
+          <span class="hero-tag outline">Product Strategy</span>
+          <span class="hero-tag outline">0 → 1 Builder</span>
+        </div>
+      </div>
+
+      <div class="hero-photo-panel">
+        <div class="hero-photo-box">
+          <img src="images/jamie-profile.png" alt="Jamie Nguru Kibanya">
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── NAV STRIP ─────────────────────────────────────────────────────────── -->
+  <nav class="nav-strip">
+    <span class="nav-programme">Error404</span>
+    <div class="nav-links">
+      <a href="https://www.linkedin.com/in/jamie-kibanya-0704a3391/" target="_blank" rel="noopener" class="nav-link">LinkedIn ↗</a>
+      <a href="https://github.com/jamieNguru" target="_blank" rel="noopener" class="nav-link">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <!-- ── SECTIONS ──────────────────────────────────────────────────────────── -->
+  <main class="body-wrap">
+
+    <!-- Mission -->
+    <div class="section">
+      <div class="sec-left">
+        <span class="sec-num">01</span>
+        <span class="sec-label">Mission</span>
+      </div>
+      <div class="sec-right">
+        <h2 class="sec-heading">My Product Mission</h2>
+        <p class="sec-answer">I want to build products that people actually need, not just ones that ship. At Error404, my job is to turn ambiguity into direction: understanding the problem deeply enough to say no to good ideas in favor of the right one, and holding the line between what users are asking for and what will actually solve their problem. I care about closing the gap between strategy and execution - a roadmap only matters if engineering, design, and the business are pulling in the same direction. Good product leadership isn't about having the best ideas in the room; it's about making sure the right ideas win.</p>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="section">
+      <div class="sec-left">
+        <span class="sec-num">02</span>
+        <span class="sec-label">Stack</span>
+      </div>
+      <div class="sec-right">
+        <h2 class="sec-heading">My Tech Stack</h2>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-status known">● Proficient</span>
+            <span class="stat-name">Productboard</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-status known">● Proficient</span>
+            <span class="stat-name">Jira / Linear</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-status known">● Proficient</span>
+            <span class="stat-name">Figma</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-status known">● Proficient</span>
+            <span class="stat-name">Amplitude</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-status known">● Proficient</span>
+            <span class="stat-name">SQL</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-status learning">▲ Learning</span>
+            <span class="stat-name">LLM Tooling</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-status learning">▲ Learning</span>
+            <span class="stat-name">Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Passions -->
+    <div class="section">
+      <div class="sec-left">
+        <span class="sec-num">03</span>
+        <span class="sec-label">Beyond Code</span>
+      </div>
+      <div class="sec-right">
+        <h2 class="sec-heading">My Passions</h2>
+        <p class="sec-answer">I enjoy staying active through chess and travelling, reading novels, listening to music and playing piano.</p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+      <div class="sec-left">
+        <span class="sec-num">04</span>
+        <span class="sec-label">Growth</span>
+      </div>
+      <div class="sec-right">
+        <h2 class="sec-heading">Skills Acquired</h2>
+        <p class="sec-prompt">The three most valuable skills I've built leading product at Error404.</p>
+        <ul class="skills-list">
+          <li class="skill-item">
+            <span class="skill-num">01</span>
+            <span class="skill-text"><strong>Turning ambiguity into a clear strategy</strong> — taking a vague problem or market signal and shaping it into a prioritized roadmap the whole company can rally behind.</span>
+          </li>
+          <li class="skill-item">
+            <span class="skill-num">02</span>
+            <span class="skill-text"><strong>Leading without owning the work directly</strong> — aligning engineering, design, and the business around a shared vision, and earning buy-in through clarity rather than authority.</span>
+          </li>
+          <li class="skill-item">
+            <span class="skill-num">03</span>
+            <span class="skill-text"><strong>Deciding fast with incomplete information</strong> — using data and direct user feedback to make confident calls under uncertainty, then adjusting quickly when the evidence changes.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Energy -->
+    <div class="section">
+      <div class="sec-left">
+        <span class="sec-num">05</span>
+        <span class="sec-label">Energy</span>
+      </div>
+      <div class="sec-right">
+        <h2 class="sec-heading">Energy &amp; Engagement</h2>
+        <p class="sec-answer">What energizes me most is the 0-to-1 stretch — the point where a problem is still fuzzy and the team is deciding what to actually build. Sitting with users to understand what they really need, pressure-testing a roadmap against real constraints, and watching a product go from a whiteboard sketch to something people rely on daily: that's the work I come back for. I'm especially engaged when a decision is genuinely hard — where the data is incomplete and the team is looking to product to set direction anyway.</p>
+      </div>
+    </div>
+
+    <!-- Looking Back -->
+    <div class="section">
+      <div class="sec-left">
+        <span class="sec-num">06</span>
+        <span class="sec-label">Reflection</span>
+      </div>
+      <div class="sec-right">
+        <h2 class="sec-heading">Looking Back</h2>
+        <p class="sec-answer">If I could give my early-career self one piece of advice, it would be: talk to users before you fall in love with your own idea. It's tempting to lead with a solution you're excited about, but the roadmaps I'm proudest of started with a problem I understood better than anyone else in the room. The other lesson: influence matters more than title. Getting a team aligned around a hard call has almost never come down to authority — it's come down to being clear, being honest about trade-offs, and being willing to change my mind when the evidence says I should.</p>
+      </div>
+    </div>
+
+    <!-- Circle of Influence -->
+    <div class="section">
+      <div class="sec-left">
+        <span class="sec-num">07</span>
+        <span class="sec-label">Gratitude</span>
+      </div>
+      <div class="sec-right">
+        <h2 class="sec-heading">Circle of Influence</h2>
+        <p class="sec-answer">I'm grateful to the mentors who challenged my thinking early on, the founders and leaders at Error404 who trusted me with hard calls, and every engineer, designer, and teammate who pushed back on an idea until it was actually good. Their honesty, patience, and collaboration have shaped both how I lead and the kind of product leader I'm still becoming.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer-copy">Chief Product Officer · Error404 · Nairobi 2026</span>
+    <a href="index.html" class="footer-back">← Back to company page</a>
+  </footer>
+
+</body>
+</html>
